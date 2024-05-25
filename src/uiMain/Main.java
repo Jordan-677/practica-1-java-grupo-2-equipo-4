@@ -147,18 +147,22 @@ public class Main {
 	}
 	// ----- FUNCIONALIDAD 2 ----------------------------------------------------------------
 	public static void realizarListaCompra(){
-		print("Elegir categoria");
+		print("Buscar producto");
 		int index=1;
 		for(Categoria i:Categoria.values()) {
 			print(index+"."+i);
 			index+=1;
 		}
-		int decision =sc.nextInt();
+		int decision = sc.nextInt();
 		switch(decision){
+		
 		case 1:
-			ArrayList <Tienda> tiendaDisp = new ArrayList<>();
-			tiendaDisp= Tienda.buscarTienda(Categoria.ALIMENTO);
-			print();
+			index=1;
+			for(Tienda i:Tienda.getTiendas()) {
+				print(index+"."+i.getNombre());
+				index++;
+			} 
+			
 		case 2:
 			Tienda.buscarTienda(Categoria.BEBIDA);
 		case 3:
